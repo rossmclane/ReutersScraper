@@ -1,8 +1,8 @@
 var express = require("express");
 var mongoose = require("mongoose");
 
-var MONGODB_URI =
-  process.env.MONGODB_URI || "mongodb://localhost/reutersScraper";
+// var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/reutersScraper";
+var MONGODB_URI = "mongodb://localhost/reutersScraper";
 mongoose.connect(MONGODB_URI);
 
 var app = express();

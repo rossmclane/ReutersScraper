@@ -16,9 +16,14 @@ module.exports = function(app) {
           .find("p.FeedItemLede_lede")
           .text();
 
+        let link = $(element)
+          .find("h2 > a")
+          .attr("href");
+
         result = {
           headline: headline,
-          story: story
+          story: story,
+          link: link
         };
 
         db.Article.create(result)

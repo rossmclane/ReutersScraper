@@ -27,7 +27,9 @@ function renderArticles(articles) {
   $("#article-list").empty();
   articles.forEach(article => {
     let articleDiv = $("<div id=article_box>");
-    let header = $("<h3>").text(article.headline);
+    let header = $(`<h3>`).html(
+      `<a href=${article.link}>${article.headline}</a>`
+    );
     let story = $("<p>").text(article.story);
     articleDiv.append(header);
     articleDiv.append(story);
@@ -113,7 +115,9 @@ function renderSavedArticles(articles) {
   $("#article-list").empty();
   articles.forEach(article => {
     let articleDiv = $("<div id=article_box>");
-    let header = $("<h3>").text(article.headline);
+    let header = $(`<h3>`).html(
+      `<a href=${article.link}>${article.headline}</a>`
+    );
     let story = $("<p>").text(article.story);
     articleDiv.append(header);
     articleDiv.append(story);
