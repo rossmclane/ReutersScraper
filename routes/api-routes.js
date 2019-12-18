@@ -66,7 +66,6 @@ module.exports = function(app) {
       });
   });
 
-  // Add a new post
   app.post("/api/articles/:id", function(req, res) {
     console.log(req.params.id);
     db.Post.create(req.body)
