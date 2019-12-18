@@ -57,7 +57,7 @@ module.exports = function(app) {
   // Get all Articles
   app.get("/api/articles/:id", function(req, res) {
     db.Article.find({ _id: req.params.id })
-      .populate("posts")
+      .populate("comments")
       .then(function(dbArticle) {
         res.json(dbArticle);
       })
@@ -68,11 +68,11 @@ module.exports = function(app) {
 
   app.post("/api/articles/:id", function(req, res) {
     console.log(req.params.id);
-    db.Post.create(req.body)
-      .then(function(dbPost) {
+    db.Comment.create(req.body)
+      .then(function(dbComment) {
         return db.Article.findOneAndUpdate(
           { _id: req.params.id },
-          { $push: { posts: dbPost._id } },
+          { $push: { comments: dbComment._id } },
           { new: true }
         );
       })

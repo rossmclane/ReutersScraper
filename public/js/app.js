@@ -77,11 +77,11 @@ function renderArticles(articles) {
       body.empty();
       body.append("<h1>Comments</h1>");
 
-      response[0].posts.map(function(post) {
+      response[0].comments.map(function(comment) {
         let commentContainer = $("<div>");
 
-        let commentTitle = $("<b>").text(post.title);
-        let commentBody = $("<p>").text(post.body);
+        let commentTitle = $("<b>").text(comment.title);
+        let commentBody = $("<p>").text(comment.body);
 
         commentContainer.append(commentTitle);
         commentContainer.append(commentBody);
@@ -135,11 +135,11 @@ function renderSavedArticles(articles) {
       body.empty();
       body.append("<h1>Comments</h1>");
 
-      response[0].posts.map(function(post) {
+      response[0].comments.map(function(comment) {
         let commentContainer = $("<div>");
 
-        let commentTitle = $("<b>").text(post.title);
-        let commentBody = $("<p>").text(post.body);
+        let commentTitle = $("<b>").text(comment.title);
+        let commentBody = $("<p>").text(comment.body);
 
         commentContainer.append(commentTitle);
         commentContainer.append(commentBody);
